@@ -63,7 +63,7 @@ $results = $db_handle->runQuery($query);
         $.ajax({
             type: "POST",
             url: "getDeparture.php",
-            data: 'bound_id='+val,
+            data: "bound_id="+val,
             success:function(data){
                 $("#departure-list").html(data);
                 getArrival();
@@ -74,7 +74,7 @@ $results = $db_handle->runQuery($query);
         $.ajax({
             type: "POST",
             url: "getArrival.php",
-            data: 'departure_id='+val,
+            data: "departure_id="+val,
             success:function(data){
                 $("#arrival-list").html(data);
                 getTime();
@@ -85,7 +85,7 @@ $results = $db_handle->runQuery($query);
         $.ajax({
             type: "POST",
             url: "getTime.php",
-            data: 'arrival_id='+val,
+            data: "arrival_id="+val,
             success:function(data){
                 $("#time-list").html(data);
               

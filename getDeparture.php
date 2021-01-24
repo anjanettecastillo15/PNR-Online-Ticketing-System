@@ -4,7 +4,7 @@
     $db_handle = new DBController();
 
     if(!empty($_POST["bound_id"])){
-        $query = "SELECT * FROM departure WHERE boundID = " . $_POST["bound_id"] . " order by name asc";
+        $query = "SELECT * FROM departure WHERE boundID = '" . $_POST["bound_id"] . "' order by name asc";
         $results = $db_handle->runQuery($query);
         ?>
 
