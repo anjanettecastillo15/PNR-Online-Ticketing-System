@@ -47,7 +47,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 <html>
 <head>
     <title>Log in</title>
-<body>
+</head>
+<body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
     <style type="text/css">
         #text{
             height: 25px;
@@ -58,6 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         }
 
         #button{
+            margin:auto;
             padding: 10px;
             width: 100px;
             color: white;
@@ -66,19 +68,32 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         }
 
         #box{
-            background-color: grey;
+            background: rgb(240,248,255,0.7);
             margin: auto;
+            text-align:center;
+            margin-top: 150px;
+            margin-bottom: 150px;
             width: 300px;
             padding: 20px;
         }
+
+        #title{
+            background: #FF8C00;
+            opacity:0.7;
+            text-align:center;
+            font-family: sans-serif;
+            color: black;
+           
+        }
     </style>
 
+    <div id="title"> <h1>PNR Online Ticketing System<h1> </div>
     <div id="box">
         <form method="post">
-        <div style="font-size: 20px; margin: 10px; color: white;">Log in</div>
+        <div style="font-size: 30px; margin: 10px; color: black; font-weight:bold;">Log in</div>
 
-            <input id="text" type="text" name="user_name"> <br><br>
-            <input id="text" type="password" name="password"> <br><br>
+            <input id="text" type="text" name="user_name"  placeholder="Enter username"> <br><br>
+            <input id="text" type="password" name="password" placeholder="Enter password"> <br><br>
 
             <input id="button" type="submit" value="Log in"> <br><br>
 
@@ -86,5 +101,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         </form>
     </div>
 </body>
-</head>
+
 </html>

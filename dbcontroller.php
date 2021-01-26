@@ -1,6 +1,6 @@
 <?php
 
-class DBController{
+/*class DBController{
     private $host = "localhost: 3307";
     private $userr = "root";
     private $pass = "";
@@ -29,5 +29,10 @@ class DBController{
         $rowcount = mysqli_num_rows($result);
         return $rowcount;
     }
+}*/
+
+$conn = mysqli_connect('localhost: 3307', 'root', '', 'process_db');
+if(!$conn){
+    die("could not connect to the database : " .mysqli_connect_error());
 }
 ?>
