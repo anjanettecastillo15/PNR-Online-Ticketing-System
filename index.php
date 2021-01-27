@@ -19,13 +19,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 }
 ?>
 
-<?php
-/*require_once("dbcontroller.php");
-$db_handle = new DBController();
-$query = "SELECT * FROM bound";
-$results = $db_handle->runQuery($query);*/
-?>
-
 
 <html>
 <head>
@@ -60,52 +53,34 @@ $results = $db_handle->runQuery($query);*/
 
 <script type="text/javascript">
 $(document).ready(function(){
-    $("#bound_table").change(function(){
+    $("#bound-list").change(function(){
         var bound_id=$(this).val();
         $.ajax({
             url:"action.php",
             method: "POST",
             data: {boundID: bound_id},
             success: function(data){
-                $("#departure").html(data);
+                $("#departure-list").html(data);
             }
         });
     });
 });
-    /*function getDeparture(val){
-        $.ajax({
-            type: "POST",
-            url: "getDeparture.php",
-            data: "bound_id="+val,
-            success:function(data){
-                $("#departure-list").html(data);
-                getArrival();
-            }
-        });
-    }
-    function getArrival(val){
-        $.ajax({
-            type: "POST",
-            url: "getArrival.php",
-            data: "departure_id="+val,
-            success:function(data){
-                $("#arrival-list").html(data);
-                getTime();
-            }
-        });
-    }
-    function getTime(val){
-        $.ajax({
-            type: "POST",
-            url: "getTime.php",
-            data: "arrival_id="+val,
-            success:function(data){
-                $("#time-list").html(data);
-              
-            }
-        });*/
-    }
+</script>
 
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#bound-list").change(function(){
+        var bound_id=$(this).val();
+        $.ajax({
+            url:"action2.php",
+            method: "POST",
+            data: {boundID: bound_id},
+            success: function(data){
+                $("#arrival-list").html(data);
+            }
+        });
+    });
+});
 </script>
 
 <body>
