@@ -83,9 +83,30 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#departure-list").change(function(){
+        var time_id=$(this).val();
+        $.ajax({
+            url:"action3.php",
+            method: "POST",
+            data: {timeID: time_id},
+            success: function(data){
+                $("#time-list").html(data);
+            }
+        });
+    });
+});
+</script>
+
 <body>
     <div class="frm">
         <h2>Please complete all the informations needed</h2>
+
+        <div class="row">
+            <label>Name:</label><br>
+            <input type="text" id="name" name="name"  class="InputBox">
+        </div>
 
         <div class="row">
             <label>Bound:</label><br>
@@ -106,6 +127,14 @@ $(document).ready(function(){
             <label>Departure Station:</label><br>
             <select name="departure" id="departure-list" class="InputBox">
                 <option value="" disabled selected>Select Departure Station</option>
+                <?php
+                    require_once 'dbcontroller.php';
+                    $sql = "SELECT * FROM time_table ORDER BY time";
+                    $result = mysqli_query($conn, $sql);
+                    while($row=mysqli_fetch_array($result)){
+               ?>
+               <option value="<?= $row['id']; ?>"><?= $row['d_time'];?></option>
+               <?php } ?>
             </select>
         </div>
 
@@ -115,12 +144,33 @@ $(document).ready(function(){
                 <option value="" disabled selected>Select Arrival Station</option>
             </select>
         </div>
+
         <div class="row">
             <label>Time:</label><br>
             <select name="time" id="time-list" class="InputBox">
                 <option value="" disabled selected>Select Time</option>
             </select>
         </div>
+
+        <div class="row">
+            <label>Passenger Type:</label><br>
+            <select name="ptype" id="ptype-list" class="InputBox">
+                <option value="" disabled selected>Select Time</option>
+                <option>Regular</option>
+                <option>Student</option>
+                <option>Senior Citizen</option>
+                <option>PWD</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label>ID Number (Student LRN, OSCA Number, PWD number. If regular type N/A):</label><br>
+            <input type="text" id="name" name="name"  class="InputBox">
+        </div>
+
+            <input id="button" type="submit" value="Next">
+            
+       
 
     </div>
     
