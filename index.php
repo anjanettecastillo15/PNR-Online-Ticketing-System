@@ -105,12 +105,12 @@ $(document).ready(function(){
 
         <div class="row">
             <label>Name:</label><br>
-            <input type="text" id="name" name="name"  class="InputBox">
+            <input type="text" id="name" name="name"  class="InputBox" placeholder="Enter Name">
         </div>
 
         <div class="row">
             <label>Bound:</label><br>
-            <select name="bound" id="bound-list" class="InputBox">
+            <select name="bound" id="bound-list" class="InputBox" >
                 <option value="" disabled selected>Select Bound</option>
                <?php
                     require_once 'dbcontroller.php';
@@ -155,7 +155,7 @@ $(document).ready(function(){
         <div class="row">
             <label>Passenger Type:</label><br>
             <select name="ptype" id="ptype-list" class="InputBox">
-                <option value="" disabled selected>Select Time</option>
+                <option value="" disabled selected>Select Passenger Type</option>
                 <option>Regular</option>
                 <option>Student</option>
                 <option>Senior Citizen</option>
@@ -165,11 +165,18 @@ $(document).ready(function(){
 
         <div class="row">
             <label>ID Number (Student LRN, OSCA Number, PWD number. If regular type N/A):</label><br>
-            <input type="text" id="name" name="name"  class="InputBox">
+            <input type="text" id="idnum" name="idnum"  class="InputBox" placeholder="Enter ID Number">
         </div>
 
-            <input id="button" type="submit" value="Next">
+        <div class="row">
+            <label>Amount Payable:</label><br>
+            <input type="text" id="amtp" name="amtp"  class="InputBox">
+        </div>
+           
             
+            <a href="index2.php"> <input id="button" type="submit" value="Next"></a>
+            <br><br>
+            <a href="logout.php"> <input id="button" type="submit" value="Log out"></a>
        
 
     </div>
