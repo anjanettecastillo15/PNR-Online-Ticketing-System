@@ -100,7 +100,9 @@ $(document).ready(function(){
 </script>
 
 <body>
+    
     <div class="frm">
+        <a href="logout.php"> <input id="button" type="submit" value="Log out"></a>
         <h2>Please complete all the informations needed</h2>
 
         <div class="row">
@@ -154,7 +156,7 @@ $(document).ready(function(){
 
         <div class="row">
             <label>Passenger Type:</label><br>
-            <select name="ptype" id="ptype-list" class="InputBox">
+            <select name="ptype" id="ptype_list" class="InputBox">
                 <option value="" disabled selected>Select Passenger Type</option>
                 <option>Regular</option>
                 <option>Student</option>
@@ -164,21 +166,24 @@ $(document).ready(function(){
         </div>
 
         <div class="row">
-            <label>ID Number (Student LRN, OSCA Number, PWD number. If regular type N/A):</label><br>
+            <label>ID Number (Student LRN/ OSCA Number/ PWD number. If regular type N/A):</label><br>
             <input type="text" id="idnum" name="idnum"  class="InputBox" placeholder="Enter ID Number">
         </div>
 
+        <input id="button" type="submit" value="Compute">
+
         <div class="row">
             <label>Amount Payable:</label><br>
-            <input type="text" id="amtp" name="amtp"  class="InputBox">
+            <textarea name="txt1" cols="38" rows="3" id="txt1" readonly>
+                <?php 
+                    echo "dito lalabas yung amount kung magkano babayaran after mapindot ni user yung COMPUTE BUTTON";
+                ?>
+            </textarea>
         </div>
            
             
-            <a href="index2.php"> <input id="button" type="submit" value="Next"></a>
-            <br><br>
-            <a href="logout.php"> <input id="button" type="submit" value="Log out"></a>
+            <a href="index2.php"> <input id="button" type="submit" value="Proceed to Payment"></a>
        
-
     </div>
     
 </body>

@@ -35,7 +35,7 @@ session_start();
 <html>
 <head>
     <title>Sign up</title>
-<body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%'>
+<body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
     <style type="text/css">
         #text{
             height: 25px;
@@ -63,8 +63,18 @@ session_start();
             width: 300px;
             padding: 20px;
         }
+
+        #title{
+            background: #FF8C00;
+            opacity:0.7;
+            text-align:center;
+            font-family: sans-serif;
+            color: black;
+           
+        }
     </style>
 
+    <div id="title"> <h1>PNR Online Ticketing System<h1> </div>
     <div id="box">
         <form method="post">
         <div  style="font-size: 30px; margin: 10px; color: black; font-weight:bold;">Sign up</div>
