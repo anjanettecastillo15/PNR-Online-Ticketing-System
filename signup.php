@@ -35,7 +35,7 @@ session_start();
 <html>
 <head>
     <title>Sign up</title>
-<body>
+<body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%'>
     <style type="text/css">
         #text{
             height: 25px;
@@ -46,6 +46,7 @@ session_start();
         }
 
         #button{
+            margin:auto;
             padding: 10px;
             width: 100px;
             color: white;
@@ -54,8 +55,11 @@ session_start();
         }
 
         #box{
-            background-color: grey;
-            margin: auto;
+            background: rgb(240,248,255,0.7);
+            margin:auto;
+            text-align:center;
+            margin-top: 150px;
+            margin-bottom: 150px;
             width: 300px;
             padding: 20px;
         }
@@ -63,10 +67,10 @@ session_start();
 
     <div id="box">
         <form method="post">
-        <div style="font-size: 20px; margin: 10px; color: white;">Sign up</div>
+        <div  style="font-size: 30px; margin: 10px; color: black; font-weight:bold;">Sign up</div>
 
-            <input id="text" type="text" name="user_name"> <br><br>
-            <input id="text" type="password" name="password"> <br><br>
+            <input id="text" type="text" name="user_name" placeholder= "Enter your name"> <br><br>
+            <input id="text" type="password" name="password" placeholder= "Enter your password"> <br><br>
 
             <input id="button" type="submit" value="Sign up"> <br><br>
 
