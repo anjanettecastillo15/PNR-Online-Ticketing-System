@@ -10,21 +10,21 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     //if(isset($_POST['user_name'])){
         $user_name = $_POST['user_name'];
    // }
-  
+
     $password = $_POST['password'];
 
     if(!empty($user_name)&& !empty($password) && !is_numeric($user_name)){
 
         //read from database
         $query = "select * from users where user_name = '$user_name' limit 1"; 
-        
+
         $result = mysqli_query($con, $query);
 
         if($result){
             if($result && mysqli_num_rows($result) > 0)
             {
                 $user_data = mysqli_fetch_assoc($result);
-                
+
                 if($user_data['password'] === $password){
 
                     $_SESSION['user_id'] = $user_data['user_id'];
@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 }
             }
         }
-        
+
         echo "Wrong username or password!";
     }
     else{
@@ -76,7 +76,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             margin-bottom: 150px;
             width: 300px;
             padding: 20px;
-            
+
         }
         #title
         {
@@ -85,12 +85,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             text-align:center;
             font-family: sans-serif;
             color: black;
-           
+
         }
       </style>
        <div id="title"> <h1>PNR Online Ticketing System<h1></div>
     <div id="box">
-    
+
         <form method="post">
         <div style="font-size: 30px; margin: 10px; color: black; font-weight:bold;">Log in</div>
 
