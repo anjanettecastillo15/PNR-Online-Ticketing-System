@@ -22,8 +22,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 <html>
 <head>
+    <link rel = "stylesheet" href="navbar.css">
     <title>PNR Online Ticketing | Home</title>
 </head>  
+
 <style type="text/css">
     body{width: 800px;
         font-family: calibri;
@@ -32,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         }
     .frm{
         border:1px solid #7ddaff;
-        background-color: #b4c8d0;
+        background-color: rgb(240,248,255,0.7);
         margin: 0px auto;
         padding: 40px;
         border-radius: 4px;
@@ -99,11 +101,20 @@ $(document).ready(function(){
 });
 </script>
 
-<body>
-    
+<body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
+
+<header>
+    <h1><span> PNR ONLINE TICKETING SYSTEM</span></h1>
+    <nav>
+        <ul>
+            <li><a href="logout.php">Log out</a><li>
+        </ul>
+    </nav>
+</header>  
+
     <div class="frm">
-        <a href="logout.php"> <input id="button" type="submit" value="Log out"></a>
-        <h2>Please complete all the informations needed</h2>
+        
+        <h2><center>Please complete all the informations needed</center></h2>
 
         <div class="row">
             <label>Name:</label><br>
@@ -169,20 +180,8 @@ $(document).ready(function(){
             <label>ID Number (Student LRN/ OSCA Number/ PWD number. If regular type N/A):</label><br>
             <input type="text" id="idnum" name="idnum"  class="InputBox" placeholder="Enter ID Number">
         </div>
-
-        <input id="button" type="submit" value="Compute">
-
-        <div class="row">
-            <label>Amount Payable:</label><br>
-            <textarea name="txt1" cols="38" rows="3" id="txt1" readonly>
-                <?php 
-                    echo "dito lalabas yung amount kung magkano babayaran after mapindot ni user yung COMPUTE BUTTON";
-                ?>
-            </textarea>
-        </div>
-           
-            
-            <a href="index2.php"> <input id="button" type="submit" value="Proceed to Payment"></a>
+ 
+        <a href="index2.php"> <input id="button" type="submit" value="Proceed to Payment"></a>
        
     </div>
     

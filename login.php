@@ -83,6 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             text-align:center;
             font-family: sans-serif;
             color: black;
+            padding: 2px;
            
         }
     </style>
