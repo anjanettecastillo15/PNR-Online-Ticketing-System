@@ -8,6 +8,15 @@ include("functions.php");
 
 <html>
 <style>
+ #button{
+            margin:auto;
+            padding: 10px;
+            width: 100px;
+            color: white;
+            background-color: lightblue;
+            border: none;
+        }
+
 #box{
             background: rgb(240,248,255,0.7);
             margin: auto;
