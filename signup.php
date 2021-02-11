@@ -34,8 +34,20 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<link rel = "stylesheet" href="navbar.css"> 
     <title>Sign up</title>
 <body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
+<header>
+   
+    <h1><span> PNR ONLINE TICKETING SYSTEM</span></h1>
+    <nav>
+        <ul>
+            <li><a href="#">About Us</a><li>
+            <li><a href="#">Help</a><li>
+        </ul>
+    </nav>
+
+</header>
     <style type="text/css">
         #text{
             height: 25px;
@@ -74,13 +86,13 @@ session_start();
         }
     </style>
 
-    <div id="title"> <h1>PNR Online Ticketing System<h1> </div>
+    
     <div id="box">
         <form method="post">
         <div  style="font-size: 30px; margin: 10px; color: black; font-weight:bold;">Sign up</div>
 
-            <input id="text" type="text" name="user_name" placeholder= "Enter your name"> <br><br>
-            <input id="text" type="password" name="password" placeholder= "Enter your password"> <br><br>
+            <input id="text" type="text" name="user_name" placeholder= "Enter username"> <br><br>
+            <input id="text" type="password" name="password" placeholder= "Enter password"> <br><br>
 
             <input id="button" type="submit" value="Sign up"> <br><br>
 

@@ -7,6 +7,11 @@ include("functions.php");
 ?>
 
 <html>
+<head>
+    <link rel = "stylesheet" href="navbar.css">
+    <title>PNR Online Ticketing | Payment</title>
+
+</head>
 <style>
  #button{
             margin:auto;
@@ -35,15 +40,32 @@ include("functions.php");
             padding: 2px;
            
         }
+.InputBox{
+            padding: 10px;
+            border:#bdbdbd 1px solid;
+            border-radius: 4px;
+            background-color: #FFF;
+            width: 50%;
+    }
 
 </style>
 <body  style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'> 
-<div id="title"> <h1>PNR Online Ticketing System<h1> </div>
+<header>
+   
+    <h1><span> PNR ONLINE TICKETING SYSTEM</span></h1>
+    <nav>
+        <ul>
+            <li><a href="index.php">Home</a><li>
+            <li><a href="logout.php">Log out</a><li>
+        </ul>
+    </nav>
+</header>  
+
     <div id="box">
         <form method="post">
         <div style="font-size: 30px; margin: 10px; color: black; font-weight:bold;">PAYMENT</div>
-
-            <input id="text" type="text" name="user_name"  placeholder="Enter amount"> <br><br>
+        <label>Enter Amount:</label><br>
+            <input id="text" type="text" name="user_name"  class="InputBox" placeholder="Enter amount"> <br><br>
             <input id="button" type="submit" value="PAY"> <br><br>
         </form>
     </div>

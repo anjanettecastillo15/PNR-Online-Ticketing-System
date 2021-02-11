@@ -46,9 +46,21 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel = "stylesheet" href="navbar.css"> 
     <title>Log in</title>
 </head>
 <body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
+<header>
+   
+    <h1><span> PNR ONLINE TICKETING SYSTEM</span></h1>
+    <nav>
+        <ul>
+            <li><a href="#">About Us</a><li>
+            <li><a href="#">Help</a><li>
+        </ul>
+    </nav>
+
+</header> 
     <style type="text/css">
         #text{
             height: 25px;
@@ -88,7 +100,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         }
     </style>
 
-    <div id="title"> <h1>PNR Online Ticketing System<h1> </div>
+   
     <div id="box">
         <form method="post">
         <div style="font-size: 30px; margin: 10px; color: black; font-weight:bold;">Log in</div>
