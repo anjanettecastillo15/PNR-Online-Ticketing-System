@@ -1,10 +1,12 @@
 <?php
+    session_start();
+   
+    //include("indexconnect.php");
+    include("indexagain.php");
+    include("connection.php");
+    include("functions.php");
 
-session_start();
-
-include("connection.php");
-include("functions.php");
-
+    
 $user_data = check_login($con);
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -14,9 +16,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $passengertype = $_POST['passengertype'];
     $departure = $_POST['departure'];
     $arrival = $_POST['arrival'];
+
 }
 ?>
-
 
 <html>
 <head>
@@ -48,6 +50,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         padding-bottom: 15px;
         padding-left: 150px;
     }
+    
+    #button{
+            margin:auto;
+            padding: 10px;
+            width: 100px;
+            color: white;
+            background-color: blue;
+            border: none;
+            float: right;
+        }
 </style>
 <script src="jquery.main.js" type="text/javascript"></script>
 
@@ -178,9 +190,14 @@ $(document).ready(function(){
             <label>ID Number (Student LRN/ OSCA Number/ PWD number. If regular type N/A):</label><br>
             <input type="text" id="idnum" name="idnum"  class="InputBox" placeholder="Enter ID Number">
         </div>
+
+        <div class="row">
+            <label>Enter Amount:</label><br>
+            <input type="text" id="amount" name="amount"  class="InputBox" placeholder="Enter Amount">
+        </div>
  
-        <a href="index2.php"> <input id="button" type="submit" value="Proceed to Payment"></a>
-       
+         <input id="button" type="submit" value="Next">
+    
     </div>
     
 </body>
