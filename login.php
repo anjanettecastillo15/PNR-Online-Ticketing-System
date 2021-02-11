@@ -55,8 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <h1><span> PNR ONLINE TICKETING SYSTEM</span></h1>
     <nav>
         <ul>
-            <li><a href="#">About Us</a><li>
-            <li><a href="#">Help</a><li>
+            <li><a href="signup.php">Sign up</a><li>
         </ul>
     </nav>
 
@@ -75,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             padding: 10px;
             width: 100px;
             color: white;
-            background-color: lightblue;
+            background-color: blue;
             border: none;
         }
 
@@ -109,8 +108,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             <input id="text" type="password" name="password" placeholder="Enter password"> <br><br>
 
             <input id="button" type="submit" value="Log in"> <br><br>
-
-            <a href="signup.php">Click to Sign up</a> <br><br>
         </form>
     </div>
 </body>

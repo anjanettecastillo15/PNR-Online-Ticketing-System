@@ -42,8 +42,7 @@ session_start();
     <h1><span> PNR ONLINE TICKETING SYSTEM</span></h1>
     <nav>
         <ul>
-            <li><a href="#">About Us</a><li>
-            <li><a href="#">Help</a><li>
+            <li><a href="login.php">Login</a><li>
         </ul>
     </nav>
 
@@ -62,7 +61,7 @@ session_start();
             padding: 10px;
             width: 100px;
             color: white;
-            background-color: lightblue;
+            background-color: blue;
             border: none;
         }
 
@@ -95,8 +94,6 @@ session_start();
             <input id="text" type="password" name="password" placeholder= "Enter password"> <br><br>
 
             <input id="button" type="submit" value="Sign up"> <br><br>
-
-            <a href="login.php">Click to Log in</a> <br><br>
         </form>
     </div>
 </body>
