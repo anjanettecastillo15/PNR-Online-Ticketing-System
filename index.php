@@ -1,7 +1,7 @@
 <?php
     session_start();
    
-    //include("indexconnect.php");
+    include("indexconnect.php");
     include("indexagain.php");
     include("connection.php");
     include("functions.php");
@@ -11,9 +11,7 @@ $user_data = check_login($con);
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-    //$passengers = $_POST['passengers'];
     $bound = $_POST['bound'];
-    $passengertype = $_POST['passengertype'];
     $departure = $_POST['departure'];
     $arrival = $_POST['arrival'];
 
@@ -121,7 +119,7 @@ $(document).ready(function(){
         </ul>
     </nav>
 </header>  
-
+<form method="post">
     <div class="frm">
         
         <h2><center>Please complete all the informations needed</center></h2>
@@ -199,6 +197,6 @@ $(document).ready(function(){
          <input id="button" type="submit" value="Next">
     
     </div>
-    
+</form>
 </body>
 </html>
