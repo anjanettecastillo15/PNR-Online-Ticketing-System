@@ -12,8 +12,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
    // }
   
     $password = $_POST['password'];
+    $pass = MD5($password);
 
-    if(!empty($user_name)&& !empty($password) && !is_numeric($user_name)){
+    if(!empty($user_name)&& !empty($pass) && !is_numeric($user_name)){
 
         //read from database
         $query = "select * from users where user_name = '$user_name' limit 1"; 
@@ -25,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             {
                 $user_data = mysqli_fetch_assoc($result);
                 
-                if($user_data['password'] === $password){
+                if($user_data['password'] === $pass){
 
                     $_SESSION['user_id'] = $user_data['user_id'];
                     header("Location: index.php");
