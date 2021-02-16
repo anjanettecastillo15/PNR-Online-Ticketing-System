@@ -3,11 +3,6 @@
    
     include("indexconnect.php");
     include("indexagain.php");
-    include("connection.php");
-    include("functions.php");
-
-    
-$user_data = check_login($con);
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
@@ -187,11 +182,6 @@ $(document).ready(function(){
         <div class="row">
             <label>ID Number (Student LRN/ OSCA Number/ PWD number. If regular type N/A):</label><br>
             <input type="text" id="idnum" name="idnum"  class="InputBox" placeholder="Enter ID Number">
-        </div>
-
-        <div class="row">
-            <label>Enter Amount:</label><br>
-            <input type="text" id="amount" name="amount"  class="InputBox" placeholder="Enter Amount">
         </div>
  
          <input id="button" type="submit" value="Next">
