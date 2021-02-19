@@ -1,8 +1,10 @@
+
+
 #box{
     background: rgb(240,248,255,0.8);
     margin: auto;
     margin-top: 150px;
-    margin-bottom: 150px;
+    margin-bottom: 0px;
     width: 300px;
     padding: 20px;
 }
@@ -72,14 +74,4 @@
     size: 50px;
        
 
-}
-
-#girl
-{
-    background: rgb(240,248,255,0.8);
-    margin: auto;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    width: 300px;
-    padding: 20px;
 }
