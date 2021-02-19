@@ -1,3 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <link rel = "stylesheet" href="navbar.css"> 
+    <title>Log in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
+
+<header>
+    <style>
+        #girl
+    {
+    background: rgb(128,128,128,0.8);
+    width: 300px;
+    margin:auto;
+    padding:20px;
+    font-family: sans-serif;
+    }
+    </style>
+
+<img src="PNR_logo.png" id="logo">
+    <h1 style="left: 4%;"> <span> PNR ONLINE TICKETING SYSTEM</span></h1>
+ 
+    <nav>
+
+        <ul>
+            <li><a href="signup.php">Sign up</a><li>
+        </ul>
+    </nav>
+
+</header>   
+   
+    <div id="box">
+    <img src="PNR_logo.png" id="logo">
+    <img src="log.jpg" id="log">
+        <form method="post">
+        <div style="font-size: 30px; margin: 10px; color: black; font-weight:bold;text-align:center">Log in</div>
+            <p>Username</p>
+            <input type="text" name="user_name"  placeholder="Enter your username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter your password">
+
+            <input type="submit" value="Log in">
+        </form>
+    </div>
+</body>
+
+</html>
+
 <?php
 session_start();
 
@@ -48,43 +100,3 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-   
-    <link rel = "stylesheet" href="navbar.css"> 
-    <title>Log in</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
-
-<header>
-<img src="PNR_logo.png" id="logo">
-    <h1 style="left: 4%;"> <span> PNR ONLINE TICKETING SYSTEM</span></h1>
- 
-    <nav>
-
-        <ul>
-            <li><a href="signup.php">Sign up</a><li>
-        </ul>
-    </nav>
-
-</header>   
-   
-    <div id="box">
-    <img src="PNR_logo.png" id="logo">
-    <img src="log.jpg" id="log">
-        <form method="post">
-        <div style="font-size: 30px; margin: 10px; color: black; font-weight:bold;text-align:center">Log in</div>
-            <p>Username</p>
-            <input type="text" name="user_name"  placeholder="Enter your username">
-            <p>Password</p>
-            <input type="password" name="password" placeholder="Enter your password">
-
-            <input type="submit" value="Log in">
-        </form>
-    </div>
-</body>
-
-</html>
