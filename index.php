@@ -3,14 +3,7 @@
    
     include("indexconnect.php");
     include("indexagain.php");
-
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-
-    $bound = $_POST['bound'];
-    $departure = $_POST['departure'];
-    $arrival = $_POST['arrival'];
-
-}
+        
 ?>
 
 <html>
@@ -54,55 +47,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             float: right;
         }
 </style>
-<script src="jquery.main.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-    $("#bound-list").change(function(){
-        var bound_id=$(this).val();
-        $.ajax({
-            url:"action.php",
-            method: "POST",
-            data: {boundID: bound_id},
-            success: function(data){
-                $("#departure-list").html(data);
-            }
-        });
-    });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-    $("#bound-list").change(function(){
-        var bound_id=$(this).val();
-        $.ajax({
-            url:"action2.php",
-            method: "POST",
-            data: {boundID: bound_id},
-            success: function(data){
-                $("#arrival-list").html(data);
-            }
-        });
-    });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-    $("#departure-list").change(function(){
-        var time_id=$(this).val();
-        $.ajax({
-            url:"action3.php",
-            method: "POST",
-            data: {timeID: time_id},
-            success: function(data){
-                $("#time-list").html(data);
-            }
-        });
-    });
-});
-</script>
 
 <body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
 
@@ -128,14 +72,8 @@ $(document).ready(function(){
             <label>Bound:</label><br>
             <select name="bound" id="bound-list" class="InputBox" >
                 <option value="" disabled selected>Select Bound</option>
-               <?php
-                    require_once 'dbcontroller.php';
-                    $sql = "SELECT * FROM bound_table ORDER BY bound";
-                    $result = mysqli_query($conn, $sql);
-                    while($row=mysqli_fetch_array($result)){
-               ?>
-               <option value="<?= $row['id']; ?>"><?= $row['bound'];?></option>
-               <?php } ?>
+                <option>Northbound</option>
+                <option>Southbound</option>
             </select>
         </div>
 
@@ -143,14 +81,23 @@ $(document).ready(function(){
             <label>Departure Station:</label><br>
             <select name="departure" id="departure-list" class="InputBox">
                 <option value="" disabled selected>Select Departure Station</option>
-                <?php
-                    require_once 'dbcontroller.php';
-                    $sql = "SELECT * FROM time_table ORDER BY time";
-                    $result = mysqli_query($conn, $sql);
-                    while($row=mysqli_fetch_array($result)){
-               ?>
-               <option value="<?= $row['id']; ?>"><?= $row['d_time'];?></option>
-               <?php } ?>
+                <option>Alabang</option>
+                <option>Sucat</option>
+                <option>Bicutan</option>
+                <option>FTI</option>
+                <option>Nichols</option>
+                <option>EDSA</option>
+                <option>Pasay</option>
+                <option>Buendia</option>
+                <option>Vito Cruz</option>
+                <option>San Andres</option>
+                <option>Paco</option>
+                <option>Pandacan</option>
+                <option>Sta. Mesa</option>
+                <option>España</option>
+                <option>Laon-laan</option>
+                <option>Blumentritt</option>
+                <option>Tutuban</option>
             </select>
         </div>
 
@@ -158,6 +105,23 @@ $(document).ready(function(){
             <label>Arrival Station:</label><br>
             <select name="arrival" id="arrival-list" class="InputBox">
                 <option value="" disabled selected>Select Arrival Station</option>
+                <option>Alabang</option>
+                <option>Sucat</option>
+                <option>Bicutan</option>
+                <option>FTI</option>
+                <option>Nichols</option>
+                <option>EDSA</option>
+                <option>Pasay</option>
+                <option>Buendia</option>
+                <option>Vito Cruz</option>
+                <option>San Andres</option>
+                <option>Paco</option>
+                <option>Pandacan</option>
+                <option>Sta. Mesa</option>
+                <option>España</option>
+                <option>Laon-laan</option>
+                <option>Blumentritt</option>
+                <option>Tutuban</option>
             </select>
         </div>
 
@@ -165,26 +129,24 @@ $(document).ready(function(){
             <label>Time:</label><br>
             <select name="time" id="time-list" class="InputBox">
                 <option value="" disabled selected>Select Time</option>
+                <option>05:12 AM</option>
+                <option>06:02 AM</option>
+                <option>06:42 AM</option>
+                <option>07:13 AM</option>
+                <option>08:22 AM</option>
+                <option>09:32 AM</option>
+                <option>11:12 AM</option>
+                <option>12:22 PM</option>
+                <option>01:12 PM</option>
+                <option>03:02 PM</option>
+                <option>04:22 PM</option>
+                <option>05:12 PM</option>
+                <option>06:22 PM</option>
+                <option>07:42 PM</option>
             </select>
         </div>
 
-        <div class="row">
-            <label>Passenger Type:</label><br>
-            <select name="ptype" id="ptype_list" class="InputBox">
-                <option value="" disabled selected>Select Passenger Type</option>
-                <option>Regular</option>
-                <option>Student</option>
-                <option>Senior Citizen</option>
-                <option>PWD</option>
-            </select>
-        </div>
-
-        <div class="row">
-            <label>ID Number (Student LRN/ OSCA Number/ PWD number. If regular type N/A):</label><br>
-            <input type="text" id="idnum" name="idnum"  class="InputBox" placeholder="Enter ID Number">
-        </div>
- 
-         <input id="button" type="submit" value="Next">
+        <input id="button" type="submit" value="Next">
     
     </div>
 </form>
