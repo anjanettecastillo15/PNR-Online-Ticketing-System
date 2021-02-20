@@ -2,7 +2,7 @@
     session_start();
    
     include("indexconnect.php");
-    include("indexagain.php");
+    //("indexagain.php");
         
 ?>
 
@@ -58,7 +58,7 @@
         </ul>
     </nav>
 </header>  
-<form method="post">
+<form method="post" action="indexagain.php">
     <div class="frm">
         
         <h2><center>Please complete all the informations needed</center></h2>
