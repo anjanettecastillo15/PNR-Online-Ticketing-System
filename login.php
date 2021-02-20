@@ -6,21 +6,31 @@
     <title>Log in</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
-<body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
-
-<header>
-    <style>
+<style>
         #girl
     {
-    background: rgb(128,128,128,0.8);
+    background: rgb(240,248,255,0.8);
     width: 300px;
     margin:auto;
     padding:20px;
     font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
     }
+    /* #back{
+        background: url(train.jpg); 
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-size:cover;
+        left:0%;
+        right:0%;
+    } */
     </style>
-
+<body  style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
+<!-- <div id="back"> -->
+<header>
+  
+   
 <img src="PNR_logo.png" id="logo">
     <h1 style="left: 4%;"> <span> PNR ONLINE TICKETING SYSTEM</span></h1>
  
@@ -32,7 +42,6 @@
     </nav>
 
 </header>   
-   
     <div id="box">
     <img src="PNR_logo.png" id="logo">
     <img src="log.jpg" id="log">
@@ -46,6 +55,7 @@
             <input type="submit" value="Log in">
         </form>
     </div>
+    <!-- </div> -->
 </body>
 
 </html>
