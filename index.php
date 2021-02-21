@@ -69,15 +69,6 @@
         </div>
 
         <div class="row">
-            <label>Bound:</label><br>
-            <select name="bound" id="bound-list" class="InputBox" >
-                <option value="" disabled selected>Select Bound</option>
-                <option>Northbound</option>
-                <option>Southbound</option>
-            </select>
-        </div>
-
-        <div class="row">
             <label>Departure Station:</label><br>
             <select name="departure" id="departure-list" class="InputBox">
                 <option value="" disabled selected>Select Departure Station</option>

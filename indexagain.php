@@ -58,9 +58,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
    $transnum = rand(1,1000000);
    $name = $_POST['name'];
 
-   if(isset($_POST['bound'])){
-    $bound = $_POST['bound'];
-   }
    if(isset($_POST['departure'])){
     $departure = $_POST['departure'];
    }
@@ -71,8 +68,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $time = $_POST['time'];
    }
    
-   if(!empty($name)&& !empty($bound) && !empty($departure) && !empty($arrival) && !empty($time)){
-       $stmt = $conn->prepare("insert into index_connection (transaction_num, name, bound, departure, arrival, time, payable) values ('$transnum','$name', '$bound', '$departure', '$arrival', '$time', '15')");
+   if(!empty($name) && !empty($departure) && !empty($arrival) && !empty($time)){
+       $stmt = $conn->prepare("insert into index_connection (transaction_num, name, departure, arrival, time, payable) values ('$transnum','$name', '$departure', '$arrival', '$time', '15')");
        $stmt->execute();
        
        $result = mysqli_query($conn, "SELECT * FROM index_connection WHERE transaction_num='$transnum'");
@@ -87,7 +84,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                echo "<br>";
                echo 'Reference Number: '.$row['transaction_num'].'<br>';
                echo 'Name: '.$row['name'].'<br>';
-               echo 'Bound: '.$row['bound'].'<br>';
                echo 'Departure Station: '.$row['departure'].'<br>';
                echo 'Arrival Station: '.$row['arrival'].'<br>';
                echo 'Departure Schedule: '.$row['time'].'<br>';
