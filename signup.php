@@ -61,9 +61,9 @@ session_start();
         $password = $_POST['password'];
         $pass = MD5($password);
 
-        if (empty(trim($_POST['user_name']))) {
+        if (empty(trim($_POST['user_name']) && trim($_POST['password']))) {
             echo "<div id=girl>";
-            echo"Please enter a username";
+            echo"Please enter a username or password";
             echo "</div>";
         }
         else{

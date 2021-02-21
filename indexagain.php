@@ -96,7 +96,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
        $conn->close();
    }
    else{
+    echo "<div id=girl>";
     echo "Please enter some valid information!";
+    echo "</div>";
    }
 }
 ?>
