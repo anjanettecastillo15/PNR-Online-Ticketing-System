@@ -73,22 +73,22 @@
             <select name="departure" id="departure-list" class="InputBox">
                 <option value="" disabled selected>Select Departure Station</option>
                 <option>Alabang</option>
-                <option>Sucat</option>
                 <option>Bicutan</option>
-                <option>FTI</option>
-                <option>Nichols</option>
-                <option>EDSA</option>
-                <option>Pasay</option>
+                <option>Blumentritt</option>
                 <option>Buendia</option>
-                <option>Vito Cruz</option>
-                <option>San Andres</option>
+                <option>EDSA</option>
+                <option>España</option>
+                <option>FTI</option>
+                <option>Laon-laan</option>
+                <option>Nichols</option>
                 <option>Paco</option>
                 <option>Pandacan</option>
+                <option>Pasay</option>
+                <option>San Andres</option>
                 <option>Sta. Mesa</option>
-                <option>España</option>
-                <option>Laon-laan</option>
-                <option>Blumentritt</option>
+                <option>Sucat</option>
                 <option>Tutuban</option>
+                <option>Vito Cruz</option>
             </select>
         </div>
 
@@ -97,22 +97,22 @@
             <select name="arrival" id="arrival-list" class="InputBox">
                 <option value="" disabled selected>Select Arrival Station</option>
                 <option>Alabang</option>
-                <option>Sucat</option>
                 <option>Bicutan</option>
-                <option>FTI</option>
-                <option>Nichols</option>
-                <option>EDSA</option>
-                <option>Pasay</option>
+                <option>Blumentritt</option>
                 <option>Buendia</option>
-                <option>Vito Cruz</option>
-                <option>San Andres</option>
+                <option>EDSA</option>
+                <option>España</option>
+                <option>FTI</option>
+                <option>Laon-laan</option>
+                <option>Nichols</option>
                 <option>Paco</option>
                 <option>Pandacan</option>
+                <option>Pasay</option>
+                <option>San Andres</option>
                 <option>Sta. Mesa</option>
-                <option>España</option>
-                <option>Laon-laan</option>
-                <option>Blumentritt</option>
+                <option>Sucat</option>
                 <option>Tutuban</option>
+                <option>Vito Cruz</option>
             </select>
         </div>
 
