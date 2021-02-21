@@ -61,23 +61,42 @@ session_start();
         $password = $_POST['password'];
         $pass = MD5($password);
 
-        if(!empty($user_name)&& !empty($pass) && !is_numeric($user_name)){
-
-            //save to database
-            $user_id = random_num(20);
-            $query = "insert into users (user_id, user_name, password) values ('$user_id', '$user_name', '$pass')"; 
-            
-            mysqli_query($con, $query);
-
-            header("Location: login.php");
-            die;
-       
-        }
-        else{
+        if (empty(trim($_POST['user_name']))) {
             echo "<div id=girl>";
-            echo "Please enter some valid information!";
+            echo"Please enter a username";
             echo "</div>";
         }
+        else{
+            $checking = mysqli_query($con, "SELECT user_name FROM users where user_name = '$user_name'");
+            $result = mysqli_num_rows($checking);
+            if($result>0){
+                echo "<div id=girl>";
+                echo "This username is already taken";
+                echo "</div>";
+            }
+            else{
+                if(!empty($user_name)&& !empty($pass) && !is_numeric($user_name)){
+    
+                    //save to database
+                    $user_id = random_num(20);
+                    $query = "insert into users (user_id, user_name, password) values ('$user_id', '$user_name', '$pass')"; 
+                    
+                    mysqli_query($con, $query);
+        
+                    header("Location: login.php");
+                    die;
+               
+                }
+                else{
+                    echo "<div id=girl>";
+                    echo "Please enter some valid information!";
+                    echo "</div>";
+                }
+            } 
+        }
+
+       
+        
     }
 
 ?>

@@ -104,8 +104,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         echo"</div>";
     }
     else{
-
-        echo "Wrong username or password!";
+        echo"<div id=girl>";
+        echo "Please enter valid information!";
+        echo"</div>";
     }
 }
 ?>
