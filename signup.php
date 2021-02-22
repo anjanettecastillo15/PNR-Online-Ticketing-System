@@ -54,7 +54,7 @@
 session_start();
 
     include("connection.php");
-    include("functions.php");
+    //include("functions.php");
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
 
@@ -65,13 +65,15 @@ session_start();
 
         if (empty(trim($_POST['user_name']) && trim($_POST['password']))) {
             echo "<div id=girl>";
-            echo"Please enter a username or password";
+            echo"Please enter a username and/or password";
             echo "</div>";
         }
         else{
             $checking = mysqli_query($con, "SELECT user_name FROM users where user_name = '$user_name'");
+            
             $result = mysqli_num_rows($checking);
-            if($result>0){
+            
+            if($result>0) {
                 echo "<div id=girl>";
                 echo "This username is already taken";
                 echo "</div>";
@@ -84,30 +86,29 @@ session_start();
         }
         else{
             $cpassword = $_POST['cpassword'];
-            if(empty($password) && ($password != $cpassword)){
+            //if(empty($password) && ($password != $cpassword)){
+            if($password != $cpassword){
             echo "<div id=girl>";
             echo "Password did not match";
             echo "</div>";
             }
-        if(!empty($user_name)&& !empty($pass) && !is_numeric($user_name) && !empty($cpassword)){
+            if(!empty($user_name)&& !empty($pass) && !is_numeric($user_name) && ($password == $cpassword)){
     
-            //save to database
-            $user_id = random_num(20);
-            $query = "insert into users (user_id, user_name, password, confirm_password) values ('$user_id', '$user_name', '$pass', '$cpassword')"; 
+                //save to database
+                $query = "insert into users (user_name, password, confirm_password) values ('$user_name', '$pass', '$cpassword')"; 
                     
-            mysqli_query($con, $query);
+                mysqli_query($con, $query);
         
-            header("Location: login.php");
-            die;
+                header("Location: login.php");
+                die;
                
-        }
-        else{
-            echo "<div id=girl>";
-            echo "Please enter some valid information!";
-            echo "</div>";
             }
+            /*else{
+                echo "<div id=girl>";
+                echo "Please enter some valid information!";
+                echo "</div>";
+            }*/
         } 
-        
     }
 
 ?>
