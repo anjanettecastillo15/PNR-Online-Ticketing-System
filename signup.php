@@ -39,6 +39,8 @@
             <input type="text" name="user_name" placeholder= "Enter username"> 
             <p>Password</p>
             <input type="password" name="password" placeholder= "Enter password"> 
+            <p>Confirm Password</p>
+            <input type="password" name="cpassword" placeholder= "Enter confirm password">
 
             <input type="submit" value="Sign up">
         </form>
@@ -74,28 +76,37 @@ session_start();
                 echo "This username is already taken";
                 echo "</div>";
             }
-            else{
-                if(!empty($user_name)&& !empty($pass) && !is_numeric($user_name)){
-    
-                    //save to database
-                    $user_id = random_num(20);
-                    $query = "insert into users (user_id, user_name, password) values ('$user_id', '$user_name', '$pass')"; 
-                    
-                    mysqli_query($con, $query);
-        
-                    header("Location: login.php");
-                    die;
-               
-                }
-                else{
-                    echo "<div id=girl>";
-                    echo "Please enter some valid information!";
-                    echo "</div>";
-                }
-            } 
         }
-
-       
+        if(empty(trim($_POST['cpassword']))){
+            echo "<div id=girl>";
+            echo "Please enter a confirm password";
+            echo "</div>";
+        }
+        else{
+            $cpassword = $_POST['cpassword'];
+            if(empty($password) && ($password != $cpassword)){
+            echo "<div id=girl>";
+            echo "Password did not match";
+            echo "</div>";
+            }
+        if(!empty($user_name)&& !empty($pass) && !is_numeric($user_name) && !empty($cpassword)){
+    
+            //save to database
+            $user_id = random_num(20);
+            $query = "insert into users (user_id, user_name, password, confirm_password) values ('$user_id', '$user_name', '$pass', '$cpassword')"; 
+                    
+            mysqli_query($con, $query);
+        
+            header("Location: login.php");
+            die;
+               
+        }
+        else{
+            echo "<div id=girl>";
+            echo "Please enter some valid information!";
+            echo "</div>";
+            }
+        } 
         
     }
 
