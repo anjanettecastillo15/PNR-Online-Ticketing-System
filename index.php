@@ -69,6 +69,11 @@
         </div>
 
         <div class="row">
+            <label>Date of Travel:</label><br>
+            <input type="date" id="date" name="date"  class="InputBox" placeholder="Enter Date">
+        </div>
+
+        <div class="row">
             <label>Departure Station:</label><br>
             <select name="departure" id="departure-list" class="InputBox">
                 <option value="" disabled selected>Select Departure Station</option>

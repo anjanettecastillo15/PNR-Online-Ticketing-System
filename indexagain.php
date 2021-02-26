@@ -67,15 +67,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
    if(isset($_POST['time'])){
     $time = $_POST['time'];
    }
+   if(isset($_POST['date'])){
+    $dot = $_POST['date'];
+   }
    
-   if(!empty($name) && !empty($departure) && !empty($arrival) && !empty($time)){
+   if(!empty($name) && !empty($departure) && !empty($arrival) && !empty($time) && !empty($dot)){
        if($departure === $arrival){
             echo "<div id=girl>";
             echo "Stations are not valid";
             echo "</div>";
        }
        else{
-        $stmt = $conn->prepare("insert into index_connection (transaction_num, name, departure, arrival, time, payable) values ('$transnum','$name', '$departure', '$arrival', '$time', '15')");
+        $stmt = $conn->prepare("insert into index_connection (transaction_num, name, date_of_travel, departure, arrival, time, payable) values ('$transnum','$name','$dot','$departure', '$arrival', '$time', '15')");
         $stmt->execute();
         
         $result = mysqli_query($conn, "SELECT * FROM index_connection WHERE transaction_num='$transnum'");
@@ -90,10 +93,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 echo "<br>";
                 echo 'Reference Number: '.$row['transaction_num'].'<br>';
                 echo 'Name: '.$row['name'].'<br>';
+                echo 'Date of Travel: '.$row['date_of_travel'].'<br>';
                 echo 'Departure Station: '.$row['departure'].'<br>';
                 echo 'Arrival Station: '.$row['arrival'].'<br>';
-                echo 'Departure Schedule: '.$row['time'].'<br>';
+                echo 'Departure Time: '.$row['time'].'<br>';
                 echo 'Payable: '.$row['payable'].'<br>';
+                echo "<br>";
+                echo "<br>";
                 echo 'Date Booked: '.$row['date'].'<br>';
                 echo 'Time Booked: '.$row['time_booked'].'<br>';
                 echo"</div>";
