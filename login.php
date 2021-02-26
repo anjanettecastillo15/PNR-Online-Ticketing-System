@@ -3,7 +3,7 @@
 <head>
    
     <link rel = "stylesheet" href="navbar.css"> 
-    <title>Log in</title>
+    <title>PNR Online Ticketing | Log in</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
@@ -48,9 +48,9 @@
         <form method="post">
         <div style="font-size: 30px; margin: 10px; color: black; font-weight:bold;text-align:center">Log in</div>
             <p>Username</p>
-            <input type="text" name="user_name"  placeholder="Enter your username">
+            <input type="text" name="user_name"  placeholder="Enter username">
             <p>Password</p>
-            <input type="password" name="password" placeholder="Enter your password">
+            <input type="password" name="password" placeholder="Enter password">
 
             <input type="submit" value="Log in">
         </form>

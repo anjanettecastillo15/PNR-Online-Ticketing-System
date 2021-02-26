@@ -64,8 +64,8 @@
         <h2><center>Please complete all the informations needed</center></h2>
 
         <div class="row">
-            <label>Name:</label><br>
-            <input type="text" id="name" name="name"  class="InputBox" placeholder="Enter Name">
+            <label>Complete Name:</label><br>
+            <input type="text" id="name" name="name"  class="InputBox" placeholder="Enter Complete Name">
         </div>
 
         <div class="row">

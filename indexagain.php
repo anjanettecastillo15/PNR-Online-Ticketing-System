@@ -78,10 +78,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             echo "</div>";
        }
        else{
-        $stmt = $conn->prepare("insert into index_connection (transaction_num, name, date_of_travel, departure, arrival, time, payable) values ('$transnum','$name','$dot','$departure', '$arrival', '$time', '15')");
+        $stmt = $conn->prepare("insert into index_connection (ref_num, name, date_of_travel, departure, arrival, time, payable) values ('$transnum','$name','$dot','$departure', '$arrival', '$time', '15')");
         $stmt->execute();
         
-        $result = mysqli_query($conn, "SELECT * FROM index_connection WHERE transaction_num='$transnum'");
+        $result = mysqli_query($conn, "SELECT * FROM index_connection WHERE ref_num='$transnum'");
         while($row = mysqli_fetch_array($result))
             {
                 echo"<div id=girl>";
@@ -91,7 +91,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 echo "Print and present this details upon boarding the train";
                 echo "<br>";
                 echo "<br>";
-                echo 'Reference Number: '.$row['transaction_num'].'<br>';
+                echo 'Reference Number: '.$row['ref_num'].'<br>';
                 echo 'Name: '.$row['name'].'<br>';
                 echo 'Date of Travel: '.$row['date_of_travel'].'<br>';
                 echo 'Departure Station: '.$row['departure'].'<br>';
@@ -100,8 +100,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 echo 'Payable: '.$row['payable'].'<br>';
                 echo "<br>";
                 echo "<br>";
-                echo 'Date Booked: '.$row['date'].'<br>';
+                echo 'Date Booked: '.$row['date_booked'].'<br>';
                 echo 'Time Booked: '.$row['time_booked'].'<br>';
+                echo "<br>";
+                echo "<br>";
+                echo "Thank you and have a safe trip!";
                 echo"</div>";
             }
         $stmt->close();

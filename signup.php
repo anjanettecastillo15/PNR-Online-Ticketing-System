@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel = "stylesheet" href="navbar.css"> 
-    <title>Sign up</title>
+    <title>PNR Online Ticketing | Sign up</title>
     <link rel="stylesheet" href="style.css">
 <body style='background: url(train.jpg); background-repeat:no-repeat; background-size:100% 100%; background-size: cover;'>
 <header>
