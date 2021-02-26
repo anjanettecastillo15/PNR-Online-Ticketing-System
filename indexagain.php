@@ -69,31 +69,39 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
    }
    
    if(!empty($name) && !empty($departure) && !empty($arrival) && !empty($time)){
-       $stmt = $conn->prepare("insert into index_connection (transaction_num, name, departure, arrival, time, payable) values ('$transnum','$name', '$departure', '$arrival', '$time', '15')");
-       $stmt->execute();
+       if($departure === $arrival){
+            echo "<div id=girl>";
+            echo "Stations are not valid";
+            echo "</div>";
+       }
+       else{
+        $stmt = $conn->prepare("insert into index_connection (transaction_num, name, departure, arrival, time, payable) values ('$transnum','$name', '$departure', '$arrival', '$time', '15')");
+        $stmt->execute();
+        
+        $result = mysqli_query($conn, "SELECT * FROM index_connection WHERE transaction_num='$transnum'");
+        while($row = mysqli_fetch_array($result))
+            {
+                echo"<div id=girl>";
+                echo "VIRTUAL TICKET";
+                echo "<br>";
+                echo "<br>";
+                echo "Print and present this details upon boarding the train";
+                echo "<br>";
+                echo "<br>";
+                echo 'Reference Number: '.$row['transaction_num'].'<br>';
+                echo 'Name: '.$row['name'].'<br>';
+                echo 'Departure Station: '.$row['departure'].'<br>';
+                echo 'Arrival Station: '.$row['arrival'].'<br>';
+                echo 'Departure Schedule: '.$row['time'].'<br>';
+                echo 'Payable: '.$row['payable'].'<br>';
+                echo 'Date Booked: '.$row['date'].'<br>';
+                echo 'Time Booked: '.$row['time_booked'].'<br>';
+                echo"</div>";
+            }
+        $stmt->close();
+        $conn->close();
+       }
        
-       $result = mysqli_query($conn, "SELECT * FROM index_connection WHERE transaction_num='$transnum'");
-       while($row = mysqli_fetch_array($result))
-           {
-               echo"<div id=girl>";
-               echo "VIRTUAL TICKET";
-               echo "<br>";
-               echo "<br>";
-               echo "Print and present this details upon boarding the train";
-               echo "<br>";
-               echo "<br>";
-               echo 'Reference Number: '.$row['transaction_num'].'<br>';
-               echo 'Name: '.$row['name'].'<br>';
-               echo 'Departure Station: '.$row['departure'].'<br>';
-               echo 'Arrival Station: '.$row['arrival'].'<br>';
-               echo 'Departure Schedule: '.$row['time'].'<br>';
-               echo 'Payable: '.$row['payable'].'<br>';
-               echo 'Date Booked: '.$row['date'].'<br>';
-               echo 'Time Booked: '.$row['time_booked'].'<br>';
-               echo"</div>";
-           }
-       $stmt->close();
-       $conn->close();
    }
    else{
     echo "<div id=girl>";
