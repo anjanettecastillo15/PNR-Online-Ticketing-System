@@ -17,6 +17,16 @@
     font-weight: bold;
     text-align: center;
     }
+    #button{
+            margin:auto;
+            padding: 10px;
+            width: 100px;
+            color: white;
+            background-color: blue;
+            border: none;
+            float: right;
+        }
+    
     /* #back{
         background: url(train.jpg); 
         background-repeat:no-repeat;
@@ -43,7 +53,9 @@
     </nav>
 
 </header>   
-    
+<div id="girl">
+    <button onclick="window.print();" id="button">Print</button>
+</div>
 </body>
 
 </html>
