@@ -84,6 +84,11 @@ session_start();
             echo "Please enter a confirm password";
             echo "</div>";
         }
+        elseif (strlen(trim($_POST['password'])) < 6) {
+            echo "<div id=girl>";
+            echo"Password must have 6 characters";
+            echo "</div>";
+        }
         else{
             $cpassword = $_POST['cpassword'];
             //if(empty($password) && ($password != $cpassword)){
