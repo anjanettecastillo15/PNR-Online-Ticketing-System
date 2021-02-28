@@ -1,8 +1,18 @@
 <?php
     session_start();
-   
+    // if(!isset($_SESSION['user_name']))
+    // {
+    //     header('location: login.php');
+    //     exit();
+    // }
+    
+    // if(!isset($_SESSION['user_name']))
+    //{
+    //     header("Location: login.php");
+    //     die;
+    // }
+
     include("indexconnect.php");
-    //("indexagain.php");
         
 ?>
 

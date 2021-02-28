@@ -64,16 +64,12 @@
 session_start();
 
 include("connection.php");
-//include("functions.php");
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-
+    
     //something was posted
-    //if(isset($_POST['user_name'])){
-        $user_name = $_POST['user_name'];
-   // }
-  
+    $user_name = $_POST['user_name'];
     $password = $_POST['password'];
     $pass = MD5($password);
 
@@ -93,7 +89,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 
                 if($user_data['password'] === $pass){
 
-                    $_SESSION['user_id'] = $user_data['user_id'];
+                    $_SESSION['user_name'] = $user_data['user_name'];
                     header("Location: index.php");
                     die;
                 }
