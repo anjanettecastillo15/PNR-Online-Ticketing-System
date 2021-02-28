@@ -37,7 +37,7 @@
     <nav>
 
         <ul>
-            <li><a href="signup.php">Sign up</a><li>
+            <li><a href="signup.php">Don't have an account? Sign up here</a><li>
         </ul>
     </nav>
 

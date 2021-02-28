@@ -10,7 +10,7 @@
     <h1  style="left: 4%;"><span> PNR ONLINE TICKETING SYSTEM</span></h1>
     <nav>
         <ul>
-            <li><a href="login.php">Login</a><li>
+            <li><a href="login.php">Already have an account? Log in here</a><li>
         </ul>
     </nav>
 
