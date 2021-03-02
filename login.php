@@ -63,7 +63,7 @@
 <?php
 session_start();
 
-include("connection.php");
+include("indexconnect.php");
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
@@ -79,7 +79,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         //read from database
         $query = "select * from users where user_name = '$user_name' limit 1"; 
         
-        $result = mysqli_query($con, $query);
+        $result = mysqli_query($conn, $query);
 
         if($result)
         {

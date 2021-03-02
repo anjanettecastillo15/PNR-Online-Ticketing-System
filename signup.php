@@ -53,7 +53,7 @@
 
 session_start();
 
-    include("connection.php");
+    include("indexconnect.php");
     //include("functions.php");
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -69,7 +69,7 @@ session_start();
             echo "</div>";
         }
         else{
-            $checking = mysqli_query($con, "SELECT user_name FROM users where user_name = '$user_name'");
+            $checking = mysqli_query($conn, "SELECT user_name FROM users where user_name = '$user_name'");
             
             $result = mysqli_num_rows($checking);
             
@@ -102,7 +102,7 @@ session_start();
                 //save to database
                 $query = "insert into users (user_name, password, confirm_password) values ('$user_name', '$pass', '$cpassword')"; 
                     
-                mysqli_query($con, $query);
+                mysqli_query($conn, $query);
         
                 header("Location: login.php");
                 die;
