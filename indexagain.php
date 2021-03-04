@@ -3,7 +3,7 @@
 <head>
    
     <link rel = "stylesheet" href="navbar.css"> 
-    <title>Log in</title>
+    <title>PNR Online Ticketing System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
@@ -24,9 +24,20 @@
             color: white;
             background-color: blue;
             border: none;
-            float: right;
         }
-    
+    @media print {
+        body * {
+            visibility: hidden;
+        }
+
+        title * {
+            visibility:hidden;
+        }
+
+        .content * {
+            visibility: visible;
+        }
+    }
     /* #back{
         background: url(train.jpg); 
         background-repeat:no-repeat;
@@ -53,14 +64,7 @@
     </nav>
 
 </header>   
-<div id="girl">
-    <button onclick="window.print();" id="button">Print</button>
-</div>
 </body>
-
-</html>
-
-
 <?php
 
 include("indexconnect.php");
@@ -96,7 +100,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $result = mysqli_query($conn, "SELECT * FROM index_connection WHERE ref_num='$transnum'");
         while($row = mysqli_fetch_array($result))
             {
-                echo"<div id=girl>";
+                echo"<div class= content>";
+                echo"<div id=box>";
                 echo "VIRTUAL TICKET";
                 echo "<br>";
                 echo "<br>";
@@ -118,6 +123,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 echo "<br>";
                 echo "Thank you and have a safe trip!";
                 echo"</div>";
+                echo "</div>";
             }
         $stmt->close();
         $conn->close();
@@ -131,3 +137,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
    }
 }
 ?>
+    <div id=girl>
+    <button onclick="window.print('box');" id="button">Print</button>
+    </div>
+
+
+</html>
