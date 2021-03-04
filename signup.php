@@ -100,7 +100,7 @@ session_start();
             if(!empty($user_name)&& !empty($pass) && !is_numeric($user_name) && ($password == $cpassword)){
     
                 //save to database
-                $query = "insert into users (user_name, password, confirm_password) values ('$user_name', '$pass', '$cpassword')"; 
+                $query = "insert into users (user_name, password) values ('$user_name', '$pass')"; 
                     
                 mysqli_query($conn, $query);
         
