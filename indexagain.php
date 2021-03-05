@@ -30,9 +30,7 @@
             visibility: hidden;
         }
 
-        title * {
-            visibility:hidden;
-        }
+      
 
         .content * {
             visibility: visible;
